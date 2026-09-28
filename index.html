@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Шонов Михаил — юрист широкого профиля. Договоры, суды, госзакупки, корпоративное право, работа с банками. Санкт-Петербург.">
+<meta property="og:title" content="Шонов Михаил — юрист">
+<meta property="og:description" content="Юрист широкого профиля. Договоры, суды, госзакупки, корпоративное право, работа с банками.">
+<meta property="og:type" content="website">
+<title>Юрист Михаил Шонов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Golos+Text:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F1F1EE;
+    --surface: #FFFFFF;
+    --ink: #15171C;
+    --muted: #5B6069;
+    --faint: #8A8F99;
+    --line: #DCDCD6;
+    --accent: #8C2F39;
+    --accent-ink: #FFFFFF;
+    --accent-soft: rgba(140, 47, 57, 0.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #121317;
+      --surface: #1A1C22;
+      --ink: #ECEDEF;
+      --muted: #A0A5B0;
+      --faint: #767C88;
+      --line: #2A2D35;
+      --accent: #D9737C;
+      --accent-ink: #1A1C22;
+      --accent-soft: rgba(217, 115, 124, 0.10);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121317;
+    --surface: #1A1C22;
+    --ink: #ECEDEF;
+    --muted: #A0A5B0;
+    --faint: #767C88;
+    --line: #2A2D35;
+    --accent: #D9737C;
+    --accent-ink: #1A1C22;
+    --accent-soft: rgba(217, 115, 124, 0.10);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  html, body { margin: 0; }
+  img { max-width: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 40px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  /* ---------- hero ---------- */
+  .hero { display: flex; flex-direction: column; gap: 14px; }
+  .monogram {
+    width: 60px; height: 60px;
+    display: grid; place-items: center;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    font-family: "Literata", Georgia, serif;
+    font-size: 22px;
+  }
+  h1 {
+    font-family: "Literata", Georgia, serif;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.08;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.4px;
+    text-wrap: balance;
+  }
+  .tagline { font-size: 17.5px; color: var(--muted); max-width: 40ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-size: 12.5px;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--surface);
+  }
+
+  .city { font-size: 15px; color: var(--faint); letter-spacing: 0.2px; }
+  .tagline { font-size: 18px; }
+
+  /* ---------- actions ---------- */
+  .actions { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 480px) { .actions { grid-template-columns: 1fr; } }
+  .actions--single { grid-template-columns: 1fr; max-width: 320px; }
+  .btn {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 15px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15.5px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    transition: border-color .12s ease, transform .12s ease;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn:active { transform: translateY(1px); }
+  .btn .arrow { color: var(--accent); }
+  .btn--primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn--primary .arrow { color: var(--accent-ink); }
+
+  .nav {
+    display: flex; flex-wrap: wrap; gap: 6px 16px;
+    font-size: 14px;
+    padding-top: 4px;
+  }
+  .nav a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- sections ---------- */
+  section { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 16px; }
+  .eyebrow {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    color: var(--accent);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  h2 {
+    font-family: "Literata", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  h3 {
+    margin: 0;
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .lede { color: var(--muted); max-width: 62ch; }
+  .note {
+    font-size: 15px;
+    color: var(--muted);
+    padding: 14px 16px;
+    background: var(--accent-soft);
+    border-radius: 4px;
+  }
+  .note b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- timeline (practice + jobs) ---------- */
+  .timeline { display: flex; flex-direction: column; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 0 14px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .tl-item::before {
+    content: "";
+    width: 9px; height: 9px;
+    margin-top: 7px;
+    border: 1.5px solid var(--accent);
+    background: var(--bg);
+    border-radius: 50%;
+    grid-row: 1 / span 3;
+    position: relative; z-index: 1;
+  }
+  .tl-item::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 18px; bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item:last-child::after { display: none; }
+  .tl-item.is-now::before { background: var(--accent); }
+  .tl-when {
+    font-size: 13px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    grid-column: 2;
+  }
+  .tl-item h3 { grid-column: 2; }
+  .tl-body { grid-column: 2; color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+  .bullets { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+  .bullets li { padding-left: 14px; position: relative; font-size: 15px; color: var(--muted); }
+  .bullets li::before {
+    content: ""; position: absolute; left: 0; top: 10px;
+    width: 5px; height: 1.5px; background: var(--accent);
+  }
+  .bullets b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- cases ---------- */
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .cases { grid-template-columns: 1fr; } }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .case .tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  .case .tag.win { color: #2F7A4F; }
+  .case .tag.part { color: #9A6B12; }
+  .case .tag.court { color: var(--faint); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .case .tag.win { color: #6CC495; }
+    :root:not([data-theme="light"]) .case .tag.part { color: #E0B25A; }
+  }
+  :root[data-theme="dark"] .case .tag.win { color: #6CC495; }
+  :root[data-theme="dark"] .case .tag.part { color: #E0B25A; }
+  .case h3 { font-family: "Literata", Georgia, serif; font-size: 17.5px; }
+  .case p { font-size: 14.5px; color: var(--muted); }
+  .case p + p { margin-top: -2px; }
+
+  /* ---------- skills ---------- */
+  .laws { display: flex; flex-wrap: wrap; gap: 7px; }
+  .law {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    font-variant-numeric: tabular-nums;
+  }
+  .law b { color: var(--accent); font-weight: 600; }
+  .skill-list { display: flex; flex-direction: column; }
+  .skill-list li {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .skill-list li:first-child { border-top: 1px solid var(--line); }
+  .skill-list .k { color: var(--muted); }
+  .skill-list .v { text-align: right; font-weight: 500; }
+
+  .ai-card {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ai-card h3 { font-family: "Literata", Georgia, serif; font-size: 20px; }
+  .ai-card p { font-size: 15px; color: var(--muted); }
+  .tag-ai {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 600; color: var(--accent);
+  }
+  .plain-list { display: flex; flex-direction: column; gap: 8px; }
+  .plain-list li { padding-left: 14px; position: relative; font-size: 15px; }
+  .plain-list li::before {
+    content: ""; position: absolute; left: 0; top: 10px;
+    width: 5px; height: 1.5px; background: var(--accent);
+  }
+
+  /* ---------- roles ---------- */
+  .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .roles { grid-template-columns: 1fr; } }
+  .role {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .role h3 {
+    font-family: "Literata", Georgia, serif;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .role .bullets { margin-top: 8px; }
+
+  /* ---------- contacts ---------- */
+  .contacts { display: flex; flex-direction: column; }
+  .contact-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-row:first-child { border-top: 1px solid var(--line); }
+  .contact-label {
+    display: block;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--faint);
+    margin-bottom: 2px;
+  }
+  .contact-val { font-size: 16px; font-weight: 500; user-select: all; word-break: break-all; }
+  .tg { color: var(--accent); text-decoration: none; }
+  .tg:hover { text-decoration: underline; }
+  .copy {
+    flex: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--accent-soft);
+    color: var(--accent);
+    cursor: pointer;
+  }
+  .copy:hover { border-color: var(--accent); }
+
+  footer { color: var(--faint); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="monogram">М</div>
+    <h1>Шонов Михаил</h1>
+    <p class="tagline">Юрист широкого профиля</p>
+    <p class="city">Санкт-Петербург</p>
+  </header>
+
+  <div class="actions">
+    <a class="btn btn--primary" href="https://disk.yandex.ru/i/MHWXYO2aTQjkdA"><span>Резюме в PDF</span><span class="arrow">→</span></a>
+    <a class="btn" href="#contacts"><span>Связаться</span><span class="arrow">↓</span></a>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="eyebrow">Обо мне</p>
+    <p class="lede">Жизнерадостный, легко нахожу общий язык с людьми и быстро становлюсь своим в любом коллективе. Люблю учиться: если задача новая — разберусь, если непонятная — докопаюсь. Взялся за дело — довожу до конца.</p>
+    <p class="note"><b>Здоровье:</b> есть особенности, внешне незаметные. Если в вашей компании больше 35 сотрудников, со мной вы заодно закрываете квоту по статье 38 Закона о занятости населения. Два в одном.</p>
+  </section>
+
+  <!-- STUDY -->
+  <section id="study">
+    <p class="eyebrow">Образование и студенческие годы</p>
+    <h2>МГЮА имени О. Е. Кутафина</h2>
+    <p class="lede">Бакалавр юриспруденции, очная форма, 2019–2023. За время учёбы прошёл практику в четырёх органах и увидел изнутри, как работают суды, прокуратура и органы внутренних дел.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-when">Практика</span>
+        <h3>Районный суд г. Абдулино</h3>
+        <p class="tl-body">Вёл протоколы судебных заседаний, вызывал участников процесса и свидетелей, занимался судебным делопроизводством.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Практика</span>
+        <h3>Прокуратура г. Абдулино</h3>
+        <p class="tl-body">Участвовал в заседаниях на стороне государственного обвинения, готовил обвинительную речь и разъяснения по применению нормативных актов, выезжал на проверки.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Практика</span>
+        <h3>УМВД России по Оренбургской области</h3>
+        <p class="tl-body">Подразделение по борьбе с экономическими преступлениями. Участвовал в допросах подозреваемых и потерпевших, готовил процессуальные и служебные документы, составлял описи дел, участвовал в следственных действиях в качестве понятого.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Практика</span>
+        <h3>Арбитражный суд Оренбургской области</h3>
+        <p class="tl-body">Помогал секретарю судебного заседания, был на заседаниях по исковым, административным делам и делам о банкротстве. Работал в АИС «Судопроизводство», картотеке арбитражных дел и «Мой арбитр».</p>
+      </div>
+    </div>
+
+    <p class="note"><b>Политические взгляды:</b> неоднократно работал наблюдателем на выборах от партии «Единая Россия».</p>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <p class="eyebrow">Опыт работы</p>
+
+    <div class="timeline">
+      <div class="tl-item is-now">
+        <span class="tl-when">сентябрь 2024 — сейчас</span>
+        <h3>Юрист · ООО «Барс»</h3>
+        <p class="tl-body">Готовлю и согласовываю договоры: ГПХ, купля-продажа, аренда, поставка. Отвечаю на требования налоговой и других контролирующих органов, веду корпоративные вопросы компании, представляю её интересы в суде. Работаю с банками: отвечаю на запросы, сопровождаю счета и платежи. Знаю изнутри, как устроены сервисы «Контура» и как через них идёт отчётность и документооборот.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">сентябрь 2023 — сентябрь 2024</span>
+        <h3>Юрист · ООО «Магметком»</h3>
+        <p class="tl-body">Договоры аренды, поставки, подряда, ГПХ, купли-продажи. Представительство в судах. Ответы на требования прокуратуры и налоговой. Корпоративное сопровождение компании.</p>
+      </div>
+      <div class="tl-item is-now">
+        <span class="tl-when">сентябрь 2023 — сейчас, параллельно с основной работой</span>
+        <h3>Сопровождение юридических и физических лиц</h3>
+        <p class="tl-body">В группе юристов веду компании и частных клиентов: от договоров и регистрационных действий до судов и ФАС.</p>
+        <ul class="bullets tl-body">
+          <li><b>Суды.</b> Арбитражные суды и суды общей юрисдикции.</li>
+          <li><b>ФАС.</b> Участвую в рассмотрении жалоб и дел о включении в реестр недобросовестных поставщиков. В одном из дел добился, чтобы компанию в реестр не включили. Решения о включении в безвыходных ситуациях оспариваю в арбитражном суде.</li>
+          <li><b>Договоры всех видов.</b> Поставка, подряд, ГПХ, купля-продажа, заём, лизинг, факторинг, аренда.</li>
+          <li><b>Госзакупки по 44-ФЗ и 223-ФЗ.</b> Контракты, жалобы, сопровождение исполнения. Вёл контракт по 44-ФЗ с казначейским сопровождением: оформлял документы на перечисление средств и проводил платежи через систему Федерального казначейства — процесс строгий и дотошный, где любая неточность останавливает оплату.</li>
+          <li><b>Недвижимость.</b> Сделки купли-продажи, регистрация ипотеки и обременений, подача документов в Росреестр через личный кабинет юрлица.</li>
+          <li><b>Корпоративное право.</b> Изменения в ЕГРЮЛ, реорганизация юридических лиц, локальные нормативные акты.</li>
+          <li><b>Банки.</b> Хорошо понимаю, как банки работают изнутри: как проходят и проверяются платежи, почему операции приостанавливают, как отвечать на запросы по 115-ФЗ. Работаю с расчётными, специальными и казначейскими счетами, банковскими гарантиями.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases">
+    <p class="eyebrow">Интересные дела</p>
+    <div class="cases">
+      <article class="case">
+        <span class="tag win">Выиграно</span>
+        <h3>Затопленное бомбоубежище</h3>
+        <p>Компанию пытались обязать содержать затопленное защитное сооружение гражданской обороны. Это не разовая трата: откачка воды, ремонт, оборудование и постоянное обслуживание на годы вперёд.</p>
+        <p>Спор с МВД рассматривал суд общей юрисдикции. Суд встал на сторону компании — обязанность на неё не возложили.</p>
+      </article>
+      <article class="case">
+        <span class="tag win">Выиграно</span>
+        <h3>Реестр недобросовестных поставщиков</h3>
+        <p>Заказчик направил в ФАС сведения, чтобы включить компанию в реестр. Для поставщика это фактический запрет на госзакупки на два года.</p>
+        <p>Представлял компанию на рассмотрении, доказал её добросовестность. ФАС отказала во включении, доступ к госзакупкам сохранён.</p>
+      </article>
+      <article class="case">
+        <span class="tag court">Арбитраж</span>
+        <h3>Против ПАО «Совкомбанк»</h3>
+        <p>Банк удержал с компании комиссию за выдачу банковской гарантии. Позиция: оснований оставлять эти деньги у банка нет.</p>
+        <p>Требование о взыскании комиссии как неосновательного обогащения по статье 1102 ГК РФ.</p>
+      </article>
+      <article class="case">
+        <span class="tag part">Частично удовлетворено</span>
+        <h3>Банкротство должника</h3>
+        <p>Представлял кредитора: заявил требования, добился их включения в реестр требований кредиторов и участвовал в процедуре.</p>
+        <p>Когда у должника денег меньше, чем долгов, частичное погашение — это уже результат. Требования удовлетворены частично.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="eyebrow">Навыки</p>
+    <p class="lede">Постоянно работаю с ГК РФ, АПК РФ, ГПК РФ, НК РФ и законами:</p>
+    <div class="laws">
+      <span class="law"><b>44-ФЗ</b> закупки</span>
+      <span class="law"><b>223-ФЗ</b> закупки</span>
+      <span class="law"><b>115-ФЗ</b> банки</span>
+      <span class="law"><b>127-ФЗ</b> банкротство</span>
+      <span class="law"><b>129-ФЗ</b> регистрация юрлиц</span>
+      <span class="law"><b>218-ФЗ</b> недвижимость</span>
+      <span class="law"><b>102-ФЗ</b> ипотека</span>
+      <span class="law"><b>164-ФЗ</b> лизинг</span>
+      <span class="law"><b>229-ФЗ</b> исполнительное производство</span>
+    </div>
+    <div class="ai-card">
+      <span class="tag-ai">Сильная сторона</span>
+      <h3>ИИ в работе</h3>
+      <p>ИИ — мой ежедневный рабочий инструмент. Работаю с ИИ-агентами: они разбирают большие пакеты документов, готовят черновики договоров и писем, сравнивают редакции и ищут судебную практику.</p>
+      <p>Выстроил под себя личную систему: шаблоны, готовые сценарии и цепочки задач, которые снимают рутину и ускоряют типовую работу в разы.</p>
+      <p>Частично занимаюсь вайбкодингом — сам собираю небольшие программы и автоматизации под свои рабочие процессы, описывая задачу нейросети обычным языком.</p>
+      <p>Каждый вывод проверяю по первоисточникам: КонсультантПлюс, картотека арбитражных дел, официальные публикации. ИИ ускоряет работу, но подпись под документом всё равно моя.</p>
+    </div>
+
+    <ul class="plain-list">
+      <li>Руководил небольшим коллективом.</li>
+      <li>Английский — средний уровень, читаю договоры.</li>
+      <li>Уверенно работаю на ПК и в сервисах «Контура», базово знаю 1С.</li>
+    </ul>
+  </section>
+
+  <!-- ROLES -->
+  <section id="roles">
+    <p class="eyebrow">Чем могу быть полезен</p>
+    <h2>Кем я могу работать у вас</h2>
+    <div class="roles">
+      <article class="role">
+        <h3>Юрисконсульт</h3>
+        <ul class="bullets">
+          <li>Составлю, проверю и согласую договоры любого вида.</li>
+          <li>Проконсультирую руководство и отделы простым языком: можно или нельзя и чем рискуем.</li>
+          <li>Подготовлю ответы на требования налоговой, прокуратуры и других органов.</li>
+          <li>Разработаю шаблоны договоров и локальные нормативные акты.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Корпоративный юрист</h3>
+        <ul class="bullets">
+          <li>Внесу изменения в ЕГРЮЛ, сниму запись о недостоверности.</li>
+          <li>Проведу реорганизацию юрлица.</li>
+          <li>Подготовлю решения, протоколы, уставные и внутренние документы.</li>
+          <li>Сопровожу сделки с имуществом компании.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Судебный юрист</h3>
+        <ul class="bullets">
+          <li>Проведу претензионную работу и попробую решить спор без суда.</li>
+          <li>Подготовлю иск, отзыв, пояснения, заявление об обеспечительных мерах.</li>
+          <li>Представлю компанию в арбитраже и суде общей юрисдикции.</li>
+          <li>Доведу дело до исполнения и проконтролирую работу приставов.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Юрист по госзакупкам</h3>
+        <ul class="bullets">
+          <li>Проверю закупочную документацию и проект контракта до подачи заявки.</li>
+          <li>Подготовлю жалобу в ФАС и представлю компанию на рассмотрении.</li>
+          <li>Защищу от включения в реестр недобросовестных поставщиков.</li>
+          <li>Сопровожу исполнение контракта, в том числе с казначейским сопровождением.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Юрист по недвижимости</h3>
+        <ul class="bullets">
+          <li>Подготовлю и проверю договор купли-продажи, аренды, залога.</li>
+          <li>Зарегистрирую переход права, ипотеку и обременения в Росреестре.</li>
+          <li>Проверю объект и продавца перед сделкой.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Специалист по работе с банками</h3>
+        <ul class="bullets">
+          <li>Отвечу на запросы банка и соберу пояснения по операциям.</li>
+          <li>Помогу разблокировать счёт или снять ограничения по 115-ФЗ.</li>
+          <li>Оформлю и проверю банковскую гарантию.</li>
+          <li>Настрою документооборот так, чтобы у банка было меньше вопросов.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Специалист по экономической безопасности</h3>
+        <ul class="bullets">
+          <li>Проверю контрагента перед сделкой: суды, долги, связи, признаки однодневки.</li>
+          <li>Оценю риски сделки для компании.</li>
+          <li>Подготовлю аналитическую справку для руководства.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>AI-тренер по юриспруденции</h3>
+        <ul class="bullets">
+          <li>Оценю ответы нейросети на юридические вопросы и найду ошибки.</li>
+          <li>Подготовлю эталонные ответы со ссылками на нормы.</li>
+          <li>Проверю качество источников, на которые опирается модель.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts">
+    <p class="eyebrow">Контакты</p>
+    <h2>Напишите — отвечу в тот же день</h2>
+    <div class="contacts">
+      <div class="contact-row">
+        <div>
+          <span class="contact-label">Телефон</span>
+          <span class="contact-val" id="v-phone">+7 922 892-71-77</span>
+        </div>
+        <button class="copy" type="button" data-target="v-phone">Копировать</button>
+      </div>
+      <div class="contact-row">
+        <div>
+          <span class="contact-label">Telegram</span>
+          <a class="contact-val tg" id="v-tg" href="https://t.me/miguel_shonidis">@miguel_shonidis</a>
+        </div>
+        <button class="copy" type="button" data-target="v-tg">Копировать</button>
+      </div>
+      <div class="contact-row">
+        <div>
+          <span class="contact-label">Почта</span>
+          <span class="contact-val" id="v-mail">mmm.sss.bti@gmail.com</span>
+        </div>
+        <button class="copy" type="button" data-target="v-mail">Копировать</button>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn btn--primary" href="https://t.me/miguel_shonidis"><span>Написать в Telegram</span><span class="arrow">→</span></a>
+      <a class="btn" href="https://disk.yandex.ru/i/MHWXYO2aTQjkdA"><span>Резюме в PDF</span><span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>Михаил Шонов · юрист · 2026</footer>
+</div>
+
+<script>
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var el = document.getElementById(btn.dataset.target);
+      if (!el) return;
+      var reset = function () { btn.textContent = "Копировать"; };
+      var select = function () {
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        btn.textContent = "Выделено";
+        setTimeout(reset, 1600);
+      };
+      try {
+        navigator.clipboard.writeText(el.textContent.trim()).then(function () {
+          btn.textContent = "Скопировано";
+          setTimeout(reset, 1600);
+        }, select);
+      } catch (e) { select(); }
+    });
+  });
+</script>
+
+</body>
+</html>
